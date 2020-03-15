@@ -2,6 +2,7 @@ var xlsx = require('xlsx');
 var readFile = xlsx.readFile('SampleData.xlsx', {cellDates:true});
 var ws = readFile.Sheets['SalesOrders'];
 var data = xlsx.utils.sheet_to_json(ws);
+//tell me about map method
 var newData = data.map(function(record){
     var net = record.UnitCost*record.Units;
     record.Total = net;
