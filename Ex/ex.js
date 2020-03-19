@@ -1,9 +1,8 @@
 var express = require('express');
-var hw = express();
-hw.get('/hellothere', function(req, res){
-    res.send('Hello there, from..');
-});
-hw.listen(1338, function(){
-    console.log('Listening at port 1338');
+var app = express();
+
+app.post('/detailed', function(req,res){
+    res.send('Hello world');
+    console.log(req.body);
 
 });
