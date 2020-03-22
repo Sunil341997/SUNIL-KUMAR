@@ -1,7 +1,7 @@
 {
   "name": "myproject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hey guys how are you?",
   "main": "action.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,23 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "form-serialize": "^0.7.2",
+    "node-gyp": "^6.1.0",
+    "pg": "^7.18.2",
     "postgres": "^1.0.2",
+    "python": "0.0.4",
+    "rebuild": "^0.1.2",
+    "sequelize": "^5.21.5",
+    "sequelizer": "^1.1.4",
     "sqlite3": "^4.1.1",
-    "xlsx": "^0.15.6"
+    "xlsx": "^0.15.6",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "directories": {
+    "test": "test"
   }
 }
