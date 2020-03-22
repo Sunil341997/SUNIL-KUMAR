@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 const cs = 'postgres://postgres:2046117@localhost:5432/test';
-const express = require("express");
+
 const client = new pg.Client(cs);
 
 client.connect();
