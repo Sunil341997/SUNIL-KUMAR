@@ -41,7 +41,7 @@ client.query('SELECT * FROM datalist where id=4').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test[3] = data;
+    test[4] = data;
 });
 app.post('/',function(req,res){
     console.log(req);

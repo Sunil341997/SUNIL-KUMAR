@@ -6,7 +6,7 @@ const client = new pg.Client(cs);
 
 client.connect();
 
-
+client.query("INSERT INTO datalist(id, name, dob, address) values(7, 'Kailash', '1978-09-05', 'Bhopal')");
 
 var test = [];
 
@@ -37,7 +37,7 @@ client.query('SELECT * FROM datalist where id=6').then(res => {
     console.log(data);
     test[3] = data;
 });
-client.query('SELECT * FROM datalist where id=4').then(res => {
+client.query('SELECT * FROM datalist where id=7').then(res => {
     
     var data = res.rows;
     console.log(data);

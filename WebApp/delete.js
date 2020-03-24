@@ -1,39 +1,56 @@
 const pg = require('pg');
-
+var express = require("express");
 const cs = 'postgres://postgres:2046117@localhost:5432/test';
-
+var app = express();
 const client = new pg.Client(cs);
 
 client.connect();
 
-var test = {};
+client.query("DELETE FROM datalist WHERE id = 7;");
+
+var test = [];
 
 client.query('SELECT * FROM datalist where id=1').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test.firstRaw = data;
+    test[0] = data;
 }
 );
 client.query('SELECT * FROM datalist where id=2').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test.secondRaw = data;
+    test[1] = data;
 }
 );
 client.query('SELECT * FROM datalist where id=3').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test.thirdRaw = data;
+    test[2] = data;
 }
 );
 client.query('SELECT * FROM datalist where id=6').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test.forthRaw = data;
-}
-);
-module.exports = test;
+    test[3] = data;
+});
+client.query('SELECT * FROM datalist where id=4').then(res => {
+    
+    var data = res.rows;
+    console.log(data);
+    test[3] = data;
+});
+client.query('SELECT * FROM datalist where id=5').then(res => {
+    
+    var data = res.rows;
+    console.log(data);
+    test[3] = data;
+});
+app.post('/',function(req,res){
+    console.log(req);
+    res.send(test);
+  });
+  module.exports = test;

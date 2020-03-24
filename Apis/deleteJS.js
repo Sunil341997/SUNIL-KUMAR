@@ -1,9 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-var read  = require('./read');
-var insert = require('./insert');
-var update = require('./update');
 var del = require('./delete');
 var request = require('./javaScript');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -15,8 +12,8 @@ app.use(function(req, res, next) {
   next();
 });
 app.post('/',function(req,res){
-  console.log(req);
-  res.send(read);
+  console.log();
+  res.send(del);
 });
 
 app.listen(1338,function(){
