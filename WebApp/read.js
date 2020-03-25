@@ -3,7 +3,7 @@ var express = require("express");
 const cs = 'postgres://postgres:2046117@localhost:5432/test';
 var app = express();
 const client = new pg.Client(cs);
-
+var sendReq = require('./oldex');
 client.connect();
 
 

@@ -3,10 +3,9 @@ var express = require("express");
 const cs = 'postgres://postgres:2046117@localhost:5432/test';
 var app = express();
 const client = new pg.Client(cs);
-
+var sendReq = require('./oldex');
 client.connect();
-
-client.query("INSERT INTO datalist(id, name, dob, address) values(7, 'Kailash', '1978-09-05', 'Bhopal')");
+client.query("INSERT INTO datalist(id, name, dob, address) values(8, 'sendReq[0].Name', 'sendReq[0].DOB', 'sendReq[0].Address');");
 
 var test = [];
 
@@ -31,7 +30,7 @@ client.query('SELECT * FROM datalist where id=3').then(res => {
     test[2] = data;
 }
 );
-client.query('SELECT * FROM datalist where id=6').then(res => {
+client.query('SELECT * FROM datalist where id=8').then(res => {
     
     var data = res.rows;
     console.log(data);
@@ -41,10 +40,10 @@ client.query('SELECT * FROM datalist where id=7').then(res => {
     
     var data = res.rows;
     console.log(data);
-    test[3] = data;
+    test[4] = data;
 });
 app.post('/',function(req,res){
     console.log(req);
     res.send(test);
   });
-  module.exports = test;
+  

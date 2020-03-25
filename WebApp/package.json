@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "circular-json": "^0.5.9"
+    "circular-json": "^0.5.9",
+    "cross-fetch": "^3.0.4",
+    "node-fetch": "^2.6.0"
   }
 }
