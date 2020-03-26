@@ -6,7 +6,7 @@ const client = new pg.Client(cs);
 
 client.connect();
 
-client.query("INSERT INTO datalist(id, name, dob, address) values(4, 'Raj', '1967-05-04', 'Jaipur')");
+client.query("INSERT INTO datalist(id, name, dob, address) values(5, 'Raj', '1967-05-04', 'Jaipur')");
 
 var test = [];
 
