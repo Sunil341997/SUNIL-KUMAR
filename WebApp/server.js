@@ -10,6 +10,8 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
   next();
 });
+var t = 0;
+var i = 0;
 app.post('/', function(req,res){
 const pg = require('pg');
 var express = require("express");
@@ -21,17 +23,19 @@ var rn = "'" +req.body.Name+ "'";
 var rd = "'" +req.body.DOB+ "'";
 var ra = "'" +req.body.Address+ "'";
 console.log(rn);
-client.query("INSERT INTO datalist (name, dob, address) values ( rn , rd, ra)");
+client.query("INSERT INTO datalist (id, name, dob, address) values (1, rn , rd, ra);");
 
 var test = [];
-var t = 0;
-client.query('SELECT * FROM datalist').then(res => {
+client.query('SELECT * FROM datalist where id = 1').then(res => {
     
    var data = res.rows;
    console.log(data);
-   test[t] = data;
-});
-res.send(test);
+   test[i] = data;
+   
+   return test;
+   
+}).then(test => {res.send(test)});
+//i++;
 });
 app.listen(1338, function(){
   console.log("Started on PORT 1338");
